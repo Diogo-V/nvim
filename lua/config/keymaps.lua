@@ -21,12 +21,6 @@ vim.keymap.set('n', '<leader>/', '<cmd>FzfLua lgrep_curbuf<cr>', { desc = '[/] L
 -- Neo tree
 vim.keymap.set('n', '<C-e>', ':Neotree toggle<CR>', { desc = 'Toggle Neo-tree', silent = true })
 
--- LSP keybinds
-vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Shows documentation' })
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
-vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Go to references" })
-vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
-
 -- Keybinds to make split navigation easier
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
