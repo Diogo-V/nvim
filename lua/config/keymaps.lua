@@ -29,6 +29,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 -- Code actions
 vim.keymap.set('n', '<leader>ci', 'gg=G', { desc = 'Reindent file' })
+vim.keymap.set("n", "<leader>cf", function() require("conform").format({ lsp_format = "fallback" }) end, { desc = "Format current file" })
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
