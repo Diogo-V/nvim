@@ -64,7 +64,7 @@ return {
         else
           gitsigns.nav_hunk("next")
         end
-      end)
+      end, { desc = "Move to next Block" })
 
       map("n", "<leader>hN", function()
         if vim.wo.diff then
@@ -72,7 +72,7 @@ return {
         else
           gitsigns.nav_hunk("prev")
         end
-      end)
+      end, { desc = "Move to previous Block" })
 
       -- Stage code blocks
       map("n", "<leader>hs", gitsigns.stage_hunk, { desc = "Stage Block" })
@@ -96,18 +96,6 @@ return {
       map("n", "<leader>hb", function()
         gitsigns.blame_line({ full = true })
       end, { desc = "Line Blame" })
-
-      -- Show diffs
-      map("n", "<leader>hd", gitsigns.diffthis, { desc = "Diff Staged/Unstaged" })
-      map("n", "<leader>hD", function()
-        gitsigns.diffthis("@")
-      end, { desc = "Diff against last commit" })
-
-      -- List all changes
-      map("n", "<leader>hQ", function()
-        gitsigns.setqflist("all")
-      end, { desc = "List Changes in Workspace" })
-      map("n", "<leader>hq", gitsigns.setqflist, { desc = "List Changes in File" })
 
       -- Toggles
       map("n", "<leader>htb", gitsigns.toggle_current_line_blame, { desc = "Toggle Line Blame" })

@@ -5,6 +5,8 @@ return {
   opts = {
     bigfile = { enabled = true },
     notifier = { enabled = true },
+    quickfile = { enabled = true },
+    git = { enabled = true },
     dashboard = {
       sections = {
         { section = "header" },
@@ -13,6 +15,29 @@ return {
         { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
         { section = "startup" },
       },
+    },
+  },
+  keys = {
+    {
+      "<leader>hl",
+      function()
+        Snacks.picker.git_log()
+      end,
+      desc = "Git Log",
+    },
+    {
+      "<leader>hd",
+      function()
+        Snacks.picker.git_diff()
+      end,
+      desc = "Diff Staged/Unstaged",
+    },
+    {
+      "<leader>hf",
+      function()
+        Snacks.picker.git_log_file()
+      end,
+      desc = "View preview commits to file",
     },
   },
 }
