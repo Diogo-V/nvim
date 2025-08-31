@@ -7,6 +7,8 @@ return {
     notifier = { enabled = true },
     quickfile = { enabled = true },
     git = { enabled = true },
+    gitbrowse = { enabled = true },
+    terminal = { enabled = true },
     dashboard = {
       sections = {
         { section = "header" },
@@ -18,6 +20,21 @@ return {
     },
   },
   keys = {
+    {
+      "<c-\\>",
+      function()
+        Snacks.terminal()
+      end,
+      desc = "Toggle Terminal",
+    },
+    {
+      "<leader>ho",
+      function()
+        Snacks.gitbrowse()
+      end,
+      desc = "Open file in GitHub",
+      mode = { "n", "v" },
+    },
     {
       "<leader>hl",
       function()
