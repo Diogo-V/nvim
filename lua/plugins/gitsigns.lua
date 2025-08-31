@@ -48,5 +48,67 @@ return {
       row = 0,
       col = 1,
     },
+    on_attach = function(bufnr)
+      local gitsigns = require("gitsigns")
+
+      local function map(mode, l, r, opts)
+        opts = opts or {}
+        opts.buffer = bufnr
+        vim.keymap.set(mode, l, r, opts)
+      end
+
+      -- Navigation
+      map("n", "<leader>hn", function()
+        if vim.wo.diff then
+          vim.cmd.normal({ "]c", bang = true })
+        else
+          gitsigns.nav_hunk("next")
+        end
+      end)
+
+      map("n", "<leader>hN", function()
+        if vim.wo.diff then
+          vim.cmd.normal({ "[c", bang = true })
+        else
+          gitsigns.nav_hunk("prev")
+        end
+      end)
+
+      -- Actions
+      map("n", "<leader>hs", gitsigns.stage_hunk, { desc = "Stage Block" })
+      map("n", "<leader>hr", gitsigns.reset_hunk, { desc = "Revert Block" })
+
+      map("v", "<leader>hs", function()
+        gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+      end, { desc = "Stage Selected" })
+
+      map("v", "<leader>hr", function()
+        gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
+      end, { desc = "Revert Selected" })
+
+      map("n", "<leader>hS", gitsigns.stage_buffer, { desc = "Stage File" })
+      map("n", "<leader>hR", gitsigns.reset_buffer, { desc = "Revert File" })
+      map("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Preview Block" })
+      map("n", "<leader>hi", gitsigns.preview_hunk_inline, { desc = "Preview Block Inline" })
+
+      map("n", "<leader>hb", function()
+        gitsigns.blame_line({ full = true })
+      end, { desc = "Line Blame" })
+
+      map("n", "<leader>hd", gitsigns.diffthis, { desc = "Diff Staged/Unstaged" })
+
+      map("n", "<leader>hD", function()
+        gitsigns.diffthis("~")
+      end, { desc = "Diff File" })
+
+      map("n", "<leader>hQ", function()
+        gitsigns.setqflist("all")
+      end, { desc = "List Changes in Workspace" })
+      map("n", "<leader>hq", gitsigns.setqflist, { desc = "List Changes in File" })
+
+      -- Toggles
+      map("n", "<leader>htb", gitsigns.toggle_current_line_blame, { desc = "Toggle Line Blame" })
+      map("n", "<leader>htw", gitsigns.toggle_word_diff, { desc = "Toggle Word diff" })
+    end,
   },
 }
