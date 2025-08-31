@@ -16,5 +16,8 @@ return {
     -- - sd'   - [S]urround [D]elete [']quotes
     -- - sr)'  - [S]urround [R]eplace [)] [']
     require("mini.surround").setup()
+
+    -- Setups auto pairing of quotes, bracktes, braces, etc...
+    require("mini.pairs").setup()
   end,
 }
