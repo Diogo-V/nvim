@@ -4,6 +4,7 @@ return {
   lazy = false,
   opts = {
     bigfile = { enabled = true },
+    notifier = { enabled = true },
     dashboard = {
       sections = {
         { section = "header" },
