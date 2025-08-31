@@ -74,33 +74,36 @@ return {
         end
       end)
 
-      -- Actions
+      -- Stage code blocks
       map("n", "<leader>hs", gitsigns.stage_hunk, { desc = "Stage Block" })
-      map("n", "<leader>hr", gitsigns.reset_hunk, { desc = "Revert Block" })
-
+      map("n", "<leader>hS", gitsigns.stage_buffer, { desc = "Stage File" })
       map("v", "<leader>hs", function()
         gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
       end, { desc = "Stage Selected" })
 
+      -- Revert code blocks
+      map("n", "<leader>hr", gitsigns.reset_hunk, { desc = "Revert Block" })
+      map("n", "<leader>hR", gitsigns.reset_buffer, { desc = "Revert File" })
       map("v", "<leader>hr", function()
         gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
       end, { desc = "Revert Selected" })
 
-      map("n", "<leader>hS", gitsigns.stage_buffer, { desc = "Stage File" })
-      map("n", "<leader>hR", gitsigns.reset_buffer, { desc = "Revert File" })
+      -- Preview of code blocks
       map("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Preview Block" })
       map("n", "<leader>hi", gitsigns.preview_hunk_inline, { desc = "Preview Block Inline" })
 
+      -- Git Blame
       map("n", "<leader>hb", function()
         gitsigns.blame_line({ full = true })
       end, { desc = "Line Blame" })
 
+      -- Show diffs
       map("n", "<leader>hd", gitsigns.diffthis, { desc = "Diff Staged/Unstaged" })
-
       map("n", "<leader>hD", function()
-        gitsigns.diffthis("~")
-      end, { desc = "Diff File" })
+        gitsigns.diffthis("@")
+      end, { desc = "Diff against last commit" })
 
+      -- List all changes
       map("n", "<leader>hQ", function()
         gitsigns.setqflist("all")
       end, { desc = "List Changes in Workspace" })
