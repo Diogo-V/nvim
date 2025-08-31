@@ -9,8 +9,8 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       cpp = { "clang-format" },
-      javascript = { "prettierd" },
-      typescript = { "prettierd" },
+      javascript = { "biome" },
+      typescript = { "biome" },
       python = { "ruff" },
       ["*"] = { "codespell" }, -- Run on all filetypes
       ["_"] = { "trim_whitespace" }, -- Run on all filetypes that do not have formatters configured

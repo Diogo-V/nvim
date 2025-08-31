@@ -1,9 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-    -- Automatically install LSPs and related tools to stdpath for Neovim
-    -- Mason must be loaded before its dependents so we need to set it up here.
-    -- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
     { "mason-org/mason.nvim", opts = {} },
     "mason-org/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim", -- Makes installing lint/format/etc... easier
@@ -43,33 +40,33 @@ return {
         map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
 
         -- Find references for the word under your cursor.
-        map("grr", require("fzf-lua").lsp_references, "[G]oto [R]eferences")
+        map("gr", require("fzf-lua").lsp_references, "[G]oto [R]eferences")
 
         -- Jump to the implementation of the word under your cursor.
         --  Useful when your language has ways of declaring types without an actual implementation.
-        map("gri", require("fzf-lua").lsp_implementations, "[G]oto [I]mplementation")
+        map("gi", require("fzf-lua").lsp_implementations, "[G]oto [I]mplementation")
 
         -- Jump to the definition of the word under your cursor.
         --  This is where a variable was first declared, or where a function is defined, etc.
         --  To jump back, press <C-t>.
-        map("grd", require("fzf-lua").lsp_definitions, "[G]oto [D]definition")
+        map("gd", require("fzf-lua").lsp_definitions, "[G]oto [D]definition")
 
         -- WARN: This is not Goto Definition, this is Goto Declaration.
         --  For example, in C this would take you to the header.
-        map("grD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+        map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
         -- Fuzzy find all the symbols in your current document.
         --  Symbols are things like variables, functions, types, etc.
-        map("gO", require("fzf-lua").lsp_document_symbols, "Open Document Symbols")
+        map("gO", require("fzf-lua").lsp_document_symbols, "[G]oto Symb[O]ls")
 
         -- Fuzzy find all the symbols in your current workspace.
         --  Similar to document symbols, except searches over your entire project.
-        map("gW", require("fzf-lua").lsp_live_workspace_symbols, "Open Workspace Symbols")
+        map("gW", require("fzf-lua").lsp_live_workspace_symbols, "[G]oto [W]orkspace Symbols")
 
         -- Jump to the type of the word under your cursor.
         --  Useful when you're not sure what type a variable is and you want to see
         --  the definition of its *type*, not where it was *defined*.
-        map("grt", require("fzf-lua").lsp_typedefs, "[G]oto [T]ype Definition")
+        map("gt", require("fzf-lua").lsp_typedefs, "[G]oto [T]ype Definition")
 
         -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
         ---@param client vim.lsp.Client
@@ -120,9 +117,9 @@ return {
         --
         -- This may be unwanted, since they displace some of your code
         if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
-          map("<leader>th", function()
+          map("<leader>ch", function()
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
-          end, "[T]oggle Inlay [H]ints")
+          end, "[C]ode Inlay [H]ints")
         end
       end,
     })
@@ -212,7 +209,7 @@ return {
       "codespell", -- Spell checker
       "stylua", -- Formatter for Lua
       "ruff", -- Formatter and Linter for Python
-      "prettierd", -- Formatter for JS/TS
+      "biome", -- Formatter and Linter for JS/TS
       "clang-format", -- Formatter for C/C++
     })
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
