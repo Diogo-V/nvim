@@ -7,7 +7,7 @@ return {
     { "<enter>", desc = "Increment Selection" },
     { "<bs>", desc = "Decrement Selection", mode = "x" },
   },
-  config = function ()
+  config = function()
     local configs = require("nvim-treesitter.configs")
     configs.setup({
       highlight = { enable = true },
@@ -45,8 +45,8 @@ return {
         "vim",
         "vimdoc",
         "xml",
-        "yaml"
+        "yaml",
       },
     })
-  end
- }
+  end,
+}
