@@ -1,4 +1,4 @@
-return {
+return { -- Git integration inside the buffer such as viewing staged blocks and previewing
   "lewis6991/gitsigns.nvim",
   opts = {
     signs = {

@@ -1,4 +1,4 @@
-return {
+return { -- Creates a parsing system for programming languages and tools to build on top
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   version = false,

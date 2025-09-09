@@ -1,4 +1,4 @@
-return {
+return { -- Lazygit CLI tool
   "kdheepak/lazygit.nvim",
   lazy = true,
   cmd = {

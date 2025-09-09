@@ -1,4 +1,4 @@
-return {
+return { -- Handles code formatting and linting
   "stevearc/conform.nvim",
   dependencies = { "mason.nvim" },
   opts = {

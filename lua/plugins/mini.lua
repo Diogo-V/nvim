@@ -1,4 +1,4 @@
-return {
+return { -- Bundle of plugins with quality of life improvements
   "nvim-mini/mini.nvim",
   version = "*",
   config = function()

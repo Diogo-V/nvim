@@ -1,4 +1,4 @@
-return { -- Modifies the cmd bar to be in the middle of the screen
+return { -- Prettify and modify the command bar to be in the middle of the screen
   "folke/noice.nvim",
   event = "VeryLazy",
   opts = {

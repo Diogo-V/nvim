@@ -1,4 +1,4 @@
-return {
+return { -- Handles LSP configuration
   "neovim/nvim-lspconfig",
   dependencies = {
     { "mason-org/mason.nvim", opts = {} },

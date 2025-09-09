@@ -1,4 +1,4 @@
-return {
+return { -- Handles commenting lines
   "numToStr/Comment.nvim",
   opts = {
     ---Add a space b/w comment and the line

@@ -1,14 +1,14 @@
-return {
-  'nvim-lualine/lualine.nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
+return { -- Bottom styled line with important information
+  "nvim-lualine/lualine.nvim",
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
-    require('lualine').setup({
+    require("lualine").setup({
       options = {
-        theme = 'auto',
+        theme = "auto",
         globalstatus = true,
         extensions = { "neo-tree", "lazy", "fzf" },
-      }
+      },
     })
     vim.o.laststatus = 3
-  end
+  end,
 }

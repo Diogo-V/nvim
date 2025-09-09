@@ -1,4 +1,4 @@
-return {
+return { -- highlits TODO and others in comments
   "folke/todo-comments.nvim",
   event = "VimEnter",
   dependencies = { "nvim-lua/plenary.nvim" },
