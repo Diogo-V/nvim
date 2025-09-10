@@ -29,7 +29,7 @@ return { -- Handles LSP configuration
 
         map("gl", function()
           vim.diagnostic.open_float()
-        end, "Go to Diagnostics")
+        end, "Open Line Diagnostic")
 
         -- Rename the variable under your cursor.
         --  Most Language Servers support renaming across files, etc.
