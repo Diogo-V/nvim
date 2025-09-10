@@ -15,6 +15,8 @@ return { -- Keybindings explorer
     spec = {
       { "<leader>f", group = "Fuzzy Find" },
       { "<leader>c", group = "Code" },
+      { "<leader>h", group = "Git" },
+      { "<leader>cc", group = "Comment Code" },
     },
   },
 }
