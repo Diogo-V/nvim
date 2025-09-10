@@ -1,12 +1,15 @@
 -- Quality of Life shortcuts
 vim.keymap.set("n", "<Esc>", ":noh<CR>", { desc = "Clear highlights", noremap = true, silent = true })
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }) -- Useful with tmux
+vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste without losing current paste term", silent = true })
+vim.keymap.set("n", "Q", "<nop>") -- Its horrible
+vim.keymap.set("i", "jj", "<Esc>", { desc = "Leave insert mode quickly", silent = true })
+
+-- Move and center cursor on screen
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Move half a page down" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Move half a page up" })
 vim.keymap.set("n", "n", "nzzzv", { desc = "Find next match", silent = true })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Find previous match", silent = true })
-vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste without losing current paste term", silent = true })
-vim.keymap.set("n", "Q", "<nop>") -- Its horrible
 
 -- Allows moving stuff around when highlighted
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Moves highlighted up", silent = true })
