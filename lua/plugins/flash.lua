@@ -1,4 +1,4 @@
-return {
+return { -- Used to quickly jump to parts of the code
   "folke/flash.nvim",
   event = "VeryLazy",
   opts = {},
