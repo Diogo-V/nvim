@@ -13,7 +13,7 @@ local check_version = function()
 end
 
 local check_external_reqs = function()
-  for _, exe in ipairs({ "git", "make", "unzip", "rg", "lazygit", "fzf", "fd", "gcc" }) do
+  for _, exe in ipairs({ "git", "make", "unzip", "rg", "lazygit", "fzf", "fd", "gcc", "cargo", "node", "rust-analyzer" }) do
     local is_executable = vim.fn.executable(exe) == 1
     if is_executable then
       vim.health.ok(string.format("Found executable: '%s'", exe))

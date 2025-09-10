@@ -170,14 +170,7 @@ return { -- Handles LSP configuration
       basedpyright = {},
       bashls = {},
       ts_ls = {},
-
-      -- Some languages (like typescript) have entire language plugins that can be useful:
-      --    https://github.com/pmizio/typescript-tools.nvim
-      --
-      -- There is also one for Rust called rustacean. It provides most things too
-      --
-      -- But for many setups, the LSP (`ts_ls`) will work just fine
-      -- ts_ls = {},
+      rust_analyzer = {}, -- Rust will be configured through the language plugin
 
       lua_ls = {
         settings = {
@@ -185,7 +178,10 @@ return { -- Handles LSP configuration
             completion = {
               callSnippet = "Replace",
             },
-            diagnostics = { disable = { "missing-fields" } },
+            diagnostics = {
+              globals = { "vim" },
+              disable = { "missing-fields" },
+            },
           },
         },
       },
@@ -211,6 +207,7 @@ return { -- Handles LSP configuration
       "ruff", -- Formatter and Linter for Python
       "biome", -- Formatter and Linter for JS/TS
       "clang-format", -- Formatter for C/C++
+      "rustfmt", -- Formatter for Rust
     })
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

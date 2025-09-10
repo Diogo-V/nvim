@@ -21,8 +21,13 @@ return { -- Creates a parsing system for programming languages and tools to buil
           node_decremental = "<bs>",
         },
       },
+      -- See list here: https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#supported-languages
       ensure_installed = {
+        "rust",
+        "dart",
+        "dockerfile",
         "bash",
+        "toml",
         "c",
         "cpp",
         "html",

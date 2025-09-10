@@ -12,6 +12,7 @@ return { -- Handles code formatting and linting
       javascript = { "biome" },
       typescript = { "biome" },
       python = { "ruff" },
+      rust = { "rustfmt" },
       ["*"] = { "codespell" }, -- Run on all filetypes
       ["_"] = { "trim_whitespace" }, -- Run on all filetypes that do not have formatters configured
     },
