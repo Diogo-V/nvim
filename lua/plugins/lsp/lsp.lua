@@ -170,7 +170,7 @@ return { -- Handles LSP configuration
       basedpyright = {},
       bashls = {},
       ts_ls = {},
-      rust_analyzer = {}, -- Rust will be configured through the language plugin
+      -- rust_analyzer = {}, -- Rust will be configured through the language plugin "rustaceanvim"
 
       lua_ls = {
         settings = {
