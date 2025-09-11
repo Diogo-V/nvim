@@ -208,6 +208,8 @@ return { -- Handles LSP configuration
       "biome", -- Formatter and Linter for JS/TS
       "clang-format", -- Formatter for C/C++
       "rustfmt", -- Formatter for Rust
+      "shellcheck", -- Linter for bash
+      "shfmt", -- Formatter for bash
     })
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

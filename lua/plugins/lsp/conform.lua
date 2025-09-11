@@ -13,6 +13,9 @@ return { -- Handles code formatting and linting
       typescript = { "biome" },
       python = { "ruff" },
       rust = { "rustfmt" },
+      bash = { "shfmt", "shellcheck" },
+      zsh = { "shfmt", "shellcheck" },
+      sh = { "shfmt", "shellcheck" },
       ["*"] = { "codespell" }, -- Run on all filetypes
       ["_"] = { "trim_whitespace" }, -- Run on all filetypes that do not have formatters configured
     },
