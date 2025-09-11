@@ -6,6 +6,8 @@ vim.g.have_nerd_font = true
 vim.o.showmode = false -- Its already in the status line
 vim.wo.relativenumber = true -- Set relative line numbers
 vim.opt.mouse = "a" -- Enables mouse in all modes
+vim.o.wrap = false -- display lines as one long line
+vim.o.cmdheight = 1 -- more space in the neovim command line for displaying messages
 
 -- Sync clipboard between OS and Neovim.
 -- Schedule the setting after `UiEnter` because it can increase startup-time.
@@ -44,7 +46,16 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 vim.o.cursorline = true -- Show which line the cursor is on
 vim.o.scrolloff = 10 -- Minimal number of screen lines to keep above and below the cursor.
+vim.o.sidescrolloff = 8 -- minimal number of screen columns either side of cursor if wrap is `false`
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if I wish to save the current file(s)
 vim.o.confirm = true
+
+vim.o.backup = false -- creates a backup file
+vim.o.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+vim.o.completeopt = "menuone,noselect" -- Set completeopt to have a better completion experience
+vim.o.swapfile = false -- creates a swapfile
+
+vim.o.conceallevel = 0 -- so that `` is visible in markdown files
+vim.o.fileencoding = "utf-8" -- the encoding written to a file
