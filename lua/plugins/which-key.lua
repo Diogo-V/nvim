@@ -13,6 +13,7 @@ return { -- Keybindings explorer
   opts = {
     preset = "helix",
     spec = {
+      { "<leader>w", group = "Window Management" },
       { "<leader>f", group = "Fuzzy Find" },
       { "<leader>c", group = "Code" },
       { "<leader>h", group = "Git" },

@@ -1,9 +1,20 @@
 -- Quality of Life shortcuts
 vim.keymap.set("n", "<Esc>", ":noh<CR>", { desc = "Clear highlights", noremap = true, silent = true })
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }) -- Useful with tmux
-vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste without losing current paste term", silent = true })
+vim.keymap.set("x", "p", [["_dP]], { desc = "Paste without losing current paste term", silent = true, noremap = true })
 vim.keymap.set("n", "Q", "<nop>") -- Its horrible
-vim.keymap.set("i", "jj", "<Esc>", { desc = "Leave insert mode quickly", silent = true })
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { noremap = true, silent = true }) -- Disable the spacebar key's default behavior
+vim.keymap.set("n", "<C-s>", "<cmd> w <CR>", { desc = "Save current buffer", noremap = true, silent = true })
+
+-- Press jk fast to exit insert mode
+vim.keymap.set("i", "jk", "<ESC>", { desc = "Leave insert mode quickly", silent = true, noremap = true })
+vim.keymap.set("i", "kj", "<ESC>", { desc = "Leave insert mode quickly", silent = true, noremap = true })
+vim.keymap.set("i", "jj", "<Esc>", { desc = "Leave insert mode quickly", silent = true, noremap = true })
+vim.keymap.set("i", "kk", "<Esc>", { desc = "Leave insert mode quickly", silent = true, noremap = true })
+
+-- Stay in indent mode
+vim.keymap.set("v", "<", "<gv", { silent = true, noremap = true })
+vim.keymap.set("v", ">", ">gv", { silent = true, noremap = true })
 
 -- Move and center cursor on screen
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Move half a page down" })
@@ -14,6 +25,18 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Find previous match", silent = true 
 -- Allows moving stuff around when highlighted
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Moves highlighted up", silent = true })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Moves highlighted down", silent = true })
+
+-- Window management
+vim.keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Split [W]indow [V]ertically", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>wh", "<C-w>s", { desc = "Split [W]indow [H]orizontally", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>we", "<C-w>=", { desc = "Make [W]indows [E]quall Width", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>wq", ":close<CR>", { desc = "[W]indow [Q]uit", noremap = true, silent = true })
+
+-- Keybinds to make split navigation easier
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- Fzf-lua
 vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files<cr>", { desc = "[F]ind [F]iles in working directory" })
@@ -37,12 +60,6 @@ vim.keymap.set("n", "<leader>/", "<cmd>FzfLua lgrep_curbuf<cr>", { desc = "[/] L
 
 -- Neo tree
 vim.keymap.set("n", "<C-e>", ":Neotree toggle<CR>", { desc = "Toggle Neo-tree", silent = true })
-
--- Keybinds to make split navigation easier
-vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
-vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
-vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
-vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- Code actions
 vim.keymap.set("n", "<leader>ci", "gg=G", { desc = "[C]ode [I]ndent" })
