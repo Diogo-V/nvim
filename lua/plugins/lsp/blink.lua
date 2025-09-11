@@ -43,6 +43,45 @@ return { -- Handle code completions
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
       default = { "lsp", "path", "buffer" },
+      providers = {
+        path = {
+          opts = { get_cwd = vim.uv.cwd },
+        },
+        buffer = {
+          max_items = 4,
+          min_keyword_length = 3,
+          score_offset = -3,
+        },
+      },
+    },
+
+    -- Sets icons for suggestions
+    kind_icons = {
+      Text = "",
+      Method = "󰊕",
+      Function = "󰊕",
+      Constructor = "",
+      Field = "󰇽",
+      Variable = "󰂡",
+      Class = "󰜁",
+      Interface = "",
+      Module = "",
+      Property = "󰜢",
+      Unit = "",
+      Value = "󰎠",
+      Enum = "",
+      Keyword = "󰌋",
+      Snippet = "󰒕",
+      Color = "󰏘",
+      Reference = "",
+      File = "",
+      Folder = "󰉋",
+      EnumMember = "",
+      Constant = "󰏿",
+      Struct = "",
+      Event = "",
+      Operator = "󰆕",
+      TypeParameter = "󰅲",
     },
 
     -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
