@@ -7,6 +7,7 @@ return { -- File explorer
     "nvim-tree/nvim-web-devicons", -- optional, but recommended
   },
   opts = {
+    close_if_last_window = true,
     sources = { "filesystem", "buffers", "git_status" },
     open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
     filesystem = {
@@ -22,6 +23,9 @@ return { -- File explorer
         ["l"] = "open",
         ["h"] = "close_node",
         ["<space>"] = "none",
+        ["S"] = "open_split",
+        ["s"] = "open_vsplit",
+        ["i"] = "show_file_details",
         ["Y"] = {
           function(state)
             local node = state.tree:get_node()
