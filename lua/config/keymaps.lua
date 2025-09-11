@@ -38,6 +38,12 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
+-- Buffers
+vim.keymap.set("n", "<Tab>", ":bnext<CR>", { desc = "Next Buffer", noremap = true, silent = true })
+vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", { desc = "Previous Buffer", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>x", ":bdelete<CR>", { desc = "Delete Buffer", noremap = true, silent = true }) -- close buffer
+vim.keymap.set("n", "<leader>b", "<cmd> new <CR>", { desc = "New Buffer", noremap = true, silent = true }) -- new buffer
+
 -- Fzf-lua
 vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files<cr>", { desc = "[F]ind [F]iles in working directory" })
 vim.keymap.set("n", "<leader>fg", "<cmd>FzfLua live_grep<cr>", { desc = "[F]ind [G]rep" })
