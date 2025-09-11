@@ -44,6 +44,12 @@ vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", { desc = "Previous Buffer", nor
 vim.keymap.set("n", "<leader>x", ":bdelete<CR>", { desc = "Delete Buffer", noremap = true, silent = true }) -- close buffer
 vim.keymap.set("n", "<leader>b", "<cmd> new <CR>", { desc = "New Buffer", noremap = true, silent = true }) -- new buffer
 
+-- Resize with arrows
+vim.keymap.set("n", "<Up>", ":resize +2<CR>", { silent = true, noremap = true })
+vim.keymap.set("n", "<Down>", ":resize -2<CR>", { silent = true, noremap = true })
+vim.keymap.set("n", "<Left>", ":vertical resize +2<CR>", { silent = true, noremap = true })
+vim.keymap.set("n", "<Right>", ":vertical resize -2<CR>", { silent = true, noremap = true })
+
 -- Fzf-lua
 vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files<cr>", { desc = "[F]ind [F]iles in working directory" })
 vim.keymap.set("n", "<leader>fg", "<cmd>FzfLua live_grep<cr>", { desc = "[F]ind [G]rep" })
