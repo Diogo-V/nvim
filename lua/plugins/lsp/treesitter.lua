@@ -10,17 +10,6 @@ return { -- Creates a parsing system for programming languages and tools to buil
   config = function()
     local configs = require("nvim-treesitter.configs")
     configs.setup({
-      highlight = { enable = true },
-      indent = { enable = true },
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = "<Enter>",
-          node_incremental = "<Enter>",
-          scope_incremental = false,
-          node_decremental = "<bs>",
-        },
-      },
       -- See list here: https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#supported-languages
       ensure_installed = {
         "rust",
@@ -51,6 +40,31 @@ return { -- Creates a parsing system for programming languages and tools to buil
         "vimdoc",
         "xml",
         "yaml",
+      },
+      highlight = { enable = true },
+      indent = { enable = true },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<Enter>",
+          node_incremental = "<Enter>",
+          scope_incremental = false,
+          node_decremental = "<bs>",
+        },
+      },
+      textobjects = {
+        select = {
+          enable = true,
+          lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+          keymaps = {
+            ["aa"] = "@parameter.outer",
+            ["ia"] = "@parameter.inner",
+            ["af"] = "@function.outer",
+            ["if"] = "@function.inner",
+            ["ac"] = "@class.outer",
+            ["ic"] = "@class.inner",
+          },
+        },
       },
     })
   end,
