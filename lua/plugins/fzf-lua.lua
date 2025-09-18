@@ -10,5 +10,9 @@ return { -- Fuzzy file picker and finder
         syntax_limit_b = 1024 * 100, -- 100KB
       },
     },
+    files = {
+      fd_opts = [[--color=never --type f --hidden --follow --exclude .git --ignore-file ]]
+        .. vim.fn.expand("$HOME/.config/nvim/lua/settings/ignore-files.txt"),
+    },
   },
 }
