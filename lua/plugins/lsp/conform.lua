@@ -6,12 +6,13 @@ return { -- Handles code formatting and linting
       timeout_ms = 1000,
       lsp_format = "fallback", -- Fallback to LSP formatting if available
     },
+    -- Find formatters in https://github.com/stevearc/conform.nvim?tab=readme-ov-file#formatters
     formatters_by_ft = {
       lua = { "stylua" },
       cpp = { "clang-format" },
-      javascript = { "biome" },
-      typescript = { "biome" },
-      python = { "ruff" },
+      javascript = { "biome-check" },
+      typescript = { "biome-check" },
+      python = { "ruff_organize_imports", "ruff_fix", "ruff_format" },
       rust = { "rustfmt" },
       bash = { "shfmt", "shellcheck" },
       zsh = { "shfmt", "shellcheck" },
