@@ -13,6 +13,8 @@ return { -- Handles code formatting and linting
       cpp = { "clang-format" },
       javascript = { "biome-check" },
       typescript = { "biome-check" },
+      javascriptreact = { "biome-check" },
+      typescriptreact = { "biome-check" },
       python = { "ruff_organize_imports", "ruff_fix", "ruff_format" },
       rust = { "rustfmt" },
       bash = { "shfmt", "shellcheck" },

@@ -10,7 +10,12 @@ return {
     lint.linters_by_ft = {
       python = { "ruff" },
       lua = { "selene" },
-      -- c and c++ come from clangd
+      javascript = { "biomejs" },
+      typescript = { "biomejs" },
+      javascriptreact = { "biomejs" },
+      typescriptreact = { "biomejs" },
+      -- rust comes from clippy that is ran by rustacean
+      -- c and c++ come from clang-tidy ran with clandg lsp
     }
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
     vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
