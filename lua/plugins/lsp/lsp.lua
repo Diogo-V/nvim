@@ -211,6 +211,7 @@ return { -- Handles LSP configuration
     vim.list_extend(ensure_installed, {
       "codespell", -- Spell checker
       "stylua", -- Formatter for Lua
+      "selene", -- Linter for Lua
       "ruff", -- Formatter and Linter for Python
       "biome", -- Formatter and Linter for JS/TS
       "clang-format", -- Formatter for C/C++
