@@ -167,13 +167,9 @@ return { -- Handles LSP configuration
     local servers = {
       clangd = {
         cmd = {
-          -- see clangd --help-hidden
           "clangd",
           "--background-index",
-          -- by default, clang-tidy use -checks=clang-diagnostic-*,clang-analyzer-*
-          -- to add more checks, create .clang-tidy file in the root directory
-          -- and add Checks key, see https://clang.llvm.org/extra/clang-tidy/
-          "--clang-tidy",
+          "--clang-tidy", -- Conform to google c++ guidelines
           "--completion-style=bundled",
           "--cross-file-rename",
           "--header-insertion=iwyu",
@@ -183,6 +179,7 @@ return { -- Handles LSP configuration
       basedpyright = {},
       bashls = {},
       ts_ls = {},
+      -- dartls = {},  -- Dart will be configured with flutter tools
       -- rust_analyzer = {}, -- Rust will be configured through the language plugin "rustaceanvim"
       lua_ls = {
         settings = {
