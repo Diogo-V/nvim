@@ -9,6 +9,7 @@ return { -- Handles code formatting and linting
     -- Find formatters in https://github.com/stevearc/conform.nvim?tab=readme-ov-file#formatters
     formatters_by_ft = {
       lua = { "stylua" },
+      c = { "clang-format" },
       cpp = { "clang-format" },
       javascript = { "biome-check" },
       typescript = { "biome-check" },

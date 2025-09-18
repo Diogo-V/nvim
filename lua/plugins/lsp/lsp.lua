@@ -165,7 +165,20 @@ return { -- Handles LSP configuration
     --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
     --  - settings (table): Override the default settings passed when initializing the server.
     local servers = {
-      clangd = {},
+      clangd = {
+        cmd = {
+          -- see clangd --help-hidden
+          "clangd",
+          "--background-index",
+          -- by default, clang-tidy use -checks=clang-diagnostic-*,clang-analyzer-*
+          -- to add more checks, create .clang-tidy file in the root directory
+          -- and add Checks key, see https://clang.llvm.org/extra/clang-tidy/
+          "--clang-tidy",
+          "--completion-style=bundled",
+          "--cross-file-rename",
+          "--header-insertion=iwyu",
+        },
+      },
       marksman = {},
       basedpyright = {},
       bashls = {},
