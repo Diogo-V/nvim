@@ -12,6 +12,7 @@ return { -- Creates a parsing system for programming languages and tools to buil
     configs.setup({
       -- See list here: https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#supported-languages
       ensure_installed = {
+        "prisma",
         "rust",
         "dart",
         "dockerfile",

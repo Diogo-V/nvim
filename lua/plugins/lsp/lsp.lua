@@ -179,6 +179,7 @@ return { -- Handles LSP configuration
       basedpyright = {},
       bashls = {},
       ts_ls = {},
+      prismals = {},
       -- dartls = {},  -- Dart will be configured with flutter tools
       -- rust_analyzer = {}, -- Rust will be configured through the language plugin "rustaceanvim"
       lua_ls = {
