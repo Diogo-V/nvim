@@ -8,6 +8,7 @@ return { -- Bundle of QoL plugins
     quickfile = { enabled = true },
     git = { enabled = true },
     gitbrowse = { enabled = true },
+    image = { enabled = true },
     terminal = { enabled = true },
     dashboard = {
       sections = {
