@@ -2,6 +2,7 @@ return { -- Creates a parsing system for programming languages and tools to buil
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   version = false,
+  lazy = false,
   cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
   keys = {
     { "<enter>", desc = "Increment Selection" },
