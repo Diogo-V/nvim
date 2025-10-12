@@ -3,6 +3,7 @@ return { -- Bundle of QoL plugins
   priority = 1000,
   lazy = false,
   opts = {
+    input = { enabled = true },
     bigfile = { enabled = true },
     notifier = { enabled = true },
     quickfile = { enabled = true },
