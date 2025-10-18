@@ -79,6 +79,14 @@ vim.keymap.set("n", "<leader>cf", function()
   require("conform").format({ lsp_format = "fallback" })
 end, { desc = "[C]ode [F]ormat" })
 
+-- Keybindings for Spell Checking
+vim.keymap.set("n", "<leader>nsa", "zg", { desc = "[S]pell [A]dd Good Word" })
+vim.keymap.set("n", "<leader>nss", "z=", { desc = "[S]pell [S]suggestions" })
+vim.keymap.set("n", "<leader>nsd", ":setlocal nospell<CR>", { desc = "[S]pell [D]isable" })
+vim.keymap.set("n", "<leader>nse", ":setlocal spell<CR>", { desc = "[S]pell [E]nable" })
+vim.keymap.set("n", "<leader>nsn", "]s", { desc = "[S]pell [N]ext Mistake" })
+vim.keymap.set("n", "<leader>nsp", "[s", { desc = "[S]pell [P]revious Mistake" })
+
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",

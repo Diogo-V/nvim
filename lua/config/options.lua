@@ -48,6 +48,11 @@ vim.o.cursorline = true -- Show which line the cursor is on
 vim.o.scrolloff = 10 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.sidescrolloff = 8 -- minimal number of screen columns either side of cursor if wrap is `false`
 
+-- Setup for spell checking:
+vim.opt.spell = true
+vim.opt.spelllang = "en_us"
+vim.opt.spelloptions:append("camel")
+
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if I wish to save the current file(s)
 vim.o.confirm = true
