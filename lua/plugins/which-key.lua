@@ -18,6 +18,10 @@ return { -- Keybindings explorer
       { "<leader>c", group = "Code" },
       { "<leader>h", group = "Git" },
       { "<leader>cc", group = "Comment Code" },
+      { "<leader>o", group = "OpenCode" },
+      { "<leader>n", group = "Neovim" },
+      { "<leader>nt", group = "Tips and Tricks" },
+      { "<leader>ns", group = "Spellchecking" },
     },
   },
 }
