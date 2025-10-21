@@ -16,7 +16,6 @@ vim.schedule(function()
 end)
 
 vim.o.breakindent = true -- Enable break indent
-vim.o.undofile = true -- Save undo history
 vim.o.signcolumn = "yes" -- Keep signcolumn on by default
 
 vim.opt.ignorecase = true -- Makes search case insensitive
@@ -61,6 +60,10 @@ vim.o.backup = false -- creates a backup file
 vim.o.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 vim.o.completeopt = "menuone,noselect" -- Set completeopt to have a better completion experience
 vim.o.swapfile = false -- creates a swapfile
+
+-- Save undo history
+vim.opt.undodir = os.getenv("HOME") .. "/.cache/nvim/undodir"
+vim.opt.undofile = true
 
 vim.o.conceallevel = 0 -- so that `` is visible in markdown files
 vim.o.fileencoding = "utf-8" -- the encoding written to a file
