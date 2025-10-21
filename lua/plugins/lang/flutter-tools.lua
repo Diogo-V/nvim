@@ -1,4 +1,4 @@
-return {
+return { -- Adds support for flutter files
   "nvim-flutter/flutter-tools.nvim",
   lazy = false,
   dependencies = {

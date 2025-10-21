@@ -1,4 +1,4 @@
-return {
+return { -- Allows seamless navigation between tmux and neovim
   "christoomey/vim-tmux-navigator",
   cmd = {
     "TmuxNavigateLeft",

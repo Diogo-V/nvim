@@ -1,4 +1,4 @@
-return {
+return { -- Adds file linters
   "mfussenegger/nvim-lint",
   event = {
     "BufReadPre",

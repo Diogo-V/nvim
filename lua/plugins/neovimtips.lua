@@ -1,4 +1,4 @@
-return {
+return { -- Shows some neovim tips on startup
   "saxon1964/neovim-tips",
   version = "*",
   dependencies = {

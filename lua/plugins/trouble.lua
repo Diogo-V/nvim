@@ -1,4 +1,4 @@
-return {
+return { -- Displays issues with the code
   "folke/trouble.nvim",
   opts = {
     auto_preview = true, -- automatically open preview when on an item

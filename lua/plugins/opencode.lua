@@ -1,4 +1,4 @@
-return {
+return { -- Opencode is a coding CLI agent
   "NickvanDyke/opencode.nvim",
   config = function()
     vim.g.opencode_opts = {
