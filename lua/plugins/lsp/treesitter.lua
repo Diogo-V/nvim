@@ -54,6 +54,7 @@ return { -- Creates a parsing system for programming languages and tools to buil
           node_decremental = "<bs>",
         },
       },
+      additional_vim_regex_highlighting = false,
       textobjects = {
         select = {
           enable = true,
