@@ -1,6 +1,7 @@
 -- Quality of Life shortcuts
 vim.keymap.set("n", "<Esc>", ":noh<CR>", { desc = "Clear highlights", noremap = true, silent = true })
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }) -- Useful with tmux
+vim.keymap.set("x", "<leader>p", '[["_dP]]', { desc = "Paste without losing content", silent = true, noremap = true })
 vim.keymap.set("v", "p", '"_dP', { desc = "Paste without losing current paste term", silent = true, noremap = true })
 vim.keymap.set("n", "Q", "<nop>") -- Its horrible
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { noremap = true, silent = true }) -- Disable the spacebar key's default behavior
