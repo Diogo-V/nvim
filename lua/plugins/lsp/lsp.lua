@@ -225,6 +225,7 @@ return { -- Handles LSP configuration
       "selene", -- Linter for Lua
       "ruff", -- Formatter and Linter for Python
       "biome", -- Formatter and Linter for JS/TS
+      "prettierd",
       "clang-format", -- Formatter for C/C++
       "rustfmt", -- Formatter for Rust
       "shellcheck", -- Linter for bash

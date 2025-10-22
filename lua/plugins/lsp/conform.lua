@@ -20,6 +20,8 @@ return { -- Handles code formatting and linting
       bash = { "shfmt", "shellcheck" },
       zsh = { "shfmt", "shellcheck" },
       sh = { "shfmt", "shellcheck" },
+      markdown = { "prettierd" },
+      json = { "prettierd" },
       ["*"] = { "codespell" }, -- Run on all filetypes
       ["_"] = { "trim_whitespace" }, -- Run on all filetypes that do not have formatters configured
     },
