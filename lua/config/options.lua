@@ -6,7 +6,7 @@ vim.g.have_nerd_font = true
 vim.o.showmode = false -- Its already in the status line
 vim.wo.relativenumber = true -- Set relative line numbers
 vim.opt.mouse = "a" -- Enables mouse in all modes
-vim.o.wrap = false -- display lines as one long line
+vim.o.wrap = true -- display lines as one long line
 vim.o.cmdheight = 1 -- more space in the neovim command line for displaying messages
 
 -- Sync clipboard between OS and Neovim.
