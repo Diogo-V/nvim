@@ -14,6 +14,7 @@ return { -- Adds file linters
       typescript = { "biomejs" },
       javascriptreact = { "biomejs" },
       typescriptreact = { "biomejs" },
+      cmake = { "cmake_lint" },
       -- rust comes from clippy that is ran by rustacean
       -- c and c++ come from clang-tidy ran with clandg lsp
     }

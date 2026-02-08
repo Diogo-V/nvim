@@ -180,6 +180,7 @@ return { -- Handles LSP configuration
       bashls = {},
       ts_ls = {},
       prismals = {},
+      neocmake = {},
       -- dartls = {},  -- Dart will be configured with flutter tools
       -- rust_analyzer = {}, -- Rust will be configured through the language plugin "rustaceanvim"
       lua_ls = {
@@ -225,6 +226,7 @@ return { -- Handles LSP configuration
       "selene", -- Linter for Lua
       "ruff", -- Formatter and Linter for Python
       "biome", -- Formatter and Linter for JS/TS
+      "cmakelang", -- Formatter and Linter for CMakeLists
       "prettierd",
       "clang-format", -- Formatter for C/C++
       "rustfmt", -- Formatter for Rust

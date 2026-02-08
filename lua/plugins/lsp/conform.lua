@@ -11,6 +11,7 @@ return { -- Handles code formatting and linting
       lua = { "stylua" },
       c = { "clang-format" },
       cpp = { "clang-format" },
+      cmake = { "cmake-format" },
       javascript = { "biome-check" },
       typescript = { "biome-check" },
       javascriptreact = { "biome-check" },
