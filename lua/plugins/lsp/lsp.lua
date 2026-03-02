@@ -57,11 +57,11 @@ return { -- Handles LSP configuration
 
         -- Fuzzy find all the symbols in your current document.
         --  Symbols are things like variables, functions, types, etc.
-        map("gO", require("fzf-lua").lsp_document_symbols, "[G]oto Symb[O]ls")
+        map("gs", require("fzf-lua").lsp_document_symbols, "[G]oto [S]symbols")
 
         -- Fuzzy find all the symbols in your current workspace.
         --  Similar to document symbols, except searches over your entire project.
-        map("gW", require("fzf-lua").lsp_live_workspace_symbols, "[G]oto [W]orkspace Symbols")
+        map("gS", require("fzf-lua").lsp_live_workspace_symbols, "[G]oto Workspace [S]symbols")
 
         -- Jump to the type of the word under your cursor.
         --  Useful when you're not sure what type a variable is and you want to see
