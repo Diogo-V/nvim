@@ -17,6 +17,7 @@ return { -- Keybindings explorer
       { "<leader>f", group = "Fuzzy Find" },
       { "<leader>c", group = "Code" },
       { "<leader>h", group = "Git" },
+      { "<leader>a", group = "AI" },
       { "<leader>cc", group = "Comment Code" },
       { "<leader>n", group = "Neovim" },
       { "<leader>nt", group = "Tips and Tricks" },
