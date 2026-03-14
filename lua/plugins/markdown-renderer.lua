@@ -4,6 +4,6 @@ return { -- Renders markddown files
   opts = {
     completions = { lsp = { enabled = true } },
     file_types = { "markdown", "codecompanion" },
-    anti_conceal = { enabled = false },
+    anti_conceal = { enabled = true },
   },
 }
