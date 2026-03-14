@@ -3,7 +3,7 @@ return { -- Renders markddown files
   dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
   opts = {
     completions = { lsp = { enabled = true } },
-    file_types = { "markdown", "codecompanion" },
-    anti_conceal = { enabled = true },
+    file_types = { "markdown", "opencode_output" },
+    anti_conceal = { enabled = false },
   },
 }
