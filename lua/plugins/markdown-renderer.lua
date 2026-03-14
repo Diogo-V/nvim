@@ -1,5 +1,9 @@
 return { -- Renders markddown files
   "MeanderingProgrammer/render-markdown.nvim",
   dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
-  opts = {},
+  opts = {
+    completions = { lsp = { enabled = true } },
+    file_types = { "markdown", "codecompanion" },
+    anti_conceal = { enabled = false },
+  },
 }
