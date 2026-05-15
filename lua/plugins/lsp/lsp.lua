@@ -176,7 +176,21 @@ return { -- Handles LSP configuration
         },
       },
       marksman = {},
-      basedpyright = {},
+      basedpyright = {
+        settings = {
+          basedpyright = {
+            analysis = {
+              useLibraryCodeForTypes = true,
+              typeCheckingMode = "basic",
+              diagnosticMode = "openFilesOnly",
+              autoSearchPath = true,
+              inlayHints = {
+                callArgumentNames = true,
+              },
+            },
+          },
+        },
+      },
       bashls = {},
       ts_ls = {},
       prismals = {},
