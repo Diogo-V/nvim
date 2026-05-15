@@ -23,6 +23,10 @@ return { -- AI integration for neovim
           ["<leader>oo"] = { "toggle" },
           ["<leader>og"] = { "open_output" },
         },
+        input_window = {
+          ["<S-cr>"] = false,
+          ["<M-s>"] = { "submit_input_prompt", mode = { "n", "i" } },
+        },
       },
     })
   end,
